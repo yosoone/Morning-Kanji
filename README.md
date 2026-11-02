@@ -18,17 +18,17 @@ The day files in `days/` hold the content, so opening them spoils the surprise.
 
 On your Mac, in Terminal:
 
-1. Download `rmapi-macos-arm64` or `rmapi-macos-intel` from the [v0.0.35 release](https://github.com/ddvk/rmapi/releases/tag/v0.0.35)[^1] and unzip it.
+1. Download `rmapi-macos-arm64.zip` or `rmapi-macos-intel.zip` from the [v0.0.35 release](https://github.com/ddvk/rmapi/releases/tag/v0.0.35)[^1] and unzip it.
 2. Run `./rmapi` once. It asks for a one-time code.
 3. Get the code from [my.remarkable.com/device/desktop/connect](https://my.remarkable.com/device/desktop/connect) and paste it in.
-4. Type `exit`. Your device token is now saved in `~/.config/rmapi/rmapi.conf`.
+4. Type `exit`. Your device token is now saved in `~/Library/Application Support/rmapi/rmapi.conf` on a Mac (`~/.config/rmapi/rmapi.conf` on Linux).
 
 ### 2. Add the token as a repository secret
 
 In this repository on GitHub: **Settings → Secrets and variables → Actions → New repository secret**.
 
 - **Name:** `RMAPI_CONFIG`
-- **Value:** the whole contents of `~/.config/rmapi/rmapi.conf`
+- **Value:** the whole contents of that file, e.g. `cat ~/Library/Application\ Support/rmapi/rmapi.conf`
 
 Keep this token private. Anyone who has it can read and change the documents on your reMarkable.
 
