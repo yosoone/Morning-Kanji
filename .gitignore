@@ -1,0 +1,4 @@
+*.pdf
+.page.html
+.footer.html
+__pycache__/

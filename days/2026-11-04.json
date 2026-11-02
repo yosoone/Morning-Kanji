@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-04",
+  "kanji": "明",
+  "kanjivg": "0660e",
+  "romaji": "akarui",
+  "meaning": "bright",
+  "kun": {
+    "kana": "あかるい",
+    "romaji": "akarui"
+  },
+  "on": {
+    "kana": "メイ",
+    "romaji": "mei"
+  },
+  "strokes": 8,
+  "grade": 2,
+  "info_fn": 1,
+  "parts": [
+    {
+      "char": "日",
+      "kana": "ひ",
+      "romaji": "hi",
+      "meaning": "sun",
+      "strokes": [
+        1,
+        4
+      ]
+    },
+    {
+      "char": "月",
+      "kana": "つき",
+      "romaji": "tsuki",
+      "meaning": "moon",
+      "strokes": [
+        5,
+        8
+      ]
+    }
+  ],
+  "prompt": "Sun and moon share one sign. Write a line for each, then one for both.",
+  "sources": [
+    "KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0"
+  ],
+  "credit": "Stroke data: KanjiVG, Ulrich Apel, CC BY-SA 3.0"
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-05",
+  "kanji": "聞",
+  "kanjivg": "0805e",
+  "romaji": "kiku",
+  "meaning": "listen",
+  "kun": {
+    "kana": "きく",
+    "romaji": "kiku"
+  },
+  "on": {
+    "kana": "ブン",
+    "romaji": "bun"
+  },
+  "strokes": 14,
+  "grade": 2,
+  "info_fn": 1,
+  "parts": [
+    {
+      "char": "門",
+      "kana": "かど",
+      "romaji": "kado",
+      "meaning": "gate",
+      "strokes": [
+        1,
+        8
+      ]
+    },
+    {
+      "char": "耳",
+      "kana": "みみ",
+      "romaji": "mimi",
+      "meaning": "ear",
+      "strokes": [
+        9,
+        14
+      ]
+    }
+  ],
+  "prompt": "Close your eyes for one minute. Write only what you heard.",
+  "sources": [
+    "KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0"
+  ],
+  "credit": "Stroke data: KanjiVG, Ulrich Apel, CC BY-SA 3.0"
+}
