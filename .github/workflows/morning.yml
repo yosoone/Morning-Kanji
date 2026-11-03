@@ -2,9 +2,7 @@ name: Morning page
 
 on:
   schedule:
-    # GitHub can delay or drop scheduled runs, so try every hour from 00:47 to 06:47
-    # in Miyazaki (15:47-21:47 UTC). sent.log makes sure only one page goes out.
-    - cron: "47 15-21 * * *"
+    - cron: "47 15 * * *"   # 00:47 in Miyazaki (UTC+9), 15:47 UTC the day before
   workflow_dispatch:
     inputs:
       date:

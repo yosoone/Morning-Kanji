@@ -6,7 +6,7 @@ The day files in `days/` hold the content, so opening them spoils the surprise.
 
 ## How it works
 
-1. **Schedule:** GitHub Actions tries `.github/workflows/morning.yml` every hour from **00:47 to 06:47 in Miyazaki**, because GitHub can delay or drop scheduled runs.[^5] The first run that finds an unsent page sends it; the rest stop at once.
+1. **Schedule:** GitHub Actions runs `.github/workflows/morning.yml` once a day at **00:47 in Miyazaki** (15:47 UTC the day before). GitHub can delay or drop scheduled runs,[^5] and running just after midnight leaves several hours for a late run to still arrive before morning.
 2. **Pick:** `send_page.sh` looks for `days/<today>.json`, using the date in Japan. If there is no file, it does nothing.
 3. **Build:** `make_page.py` renders a one-page PDF at the reMarkable 2 screen size (1404 × 1872 px at 226 dpi).
 4. **Send:** [rmapi](https://github.com/ddvk/rmapi)[^1] uploads it to a folder called **Morning** on the tablet. The file is named by date only.
