@@ -18,16 +18,17 @@ if grep -qx "$DAY" sent.log 2>/dev/null; then
   exit 0
 fi
 
-# The file name is only the date, so the tablet shows no spoiler.
-python3 make_page.py "days/$DAY.json" "$DAY.pdf"
+# File name: date-romaji-kanji, e.g. 2026-11-03-iki-息.pdf
+NAME="$(python3 -c 'import json,sys; d=json.load(open(sys.argv[1], encoding="utf-8")); print("-".join([d["date"], d["romaji"], d["kanji"]]))' "days/$DAY.json")"
+python3 make_page.py "days/$DAY.json" "$NAME.pdf"
 
 if [[ "${DRY_RUN:-0}" == "1" ]]; then
-  echo "Dry run: built $DAY.pdf, not sent."
+  echo "Dry run: built $NAME.pdf, not sent."
   exit 0
 fi
 
 # -ni: fail instead of waiting for a pairing code when the token is missing or expired
 rmapi -ni mkdir "$FOLDER" >/dev/null 2>&1 || true
-rmapi -ni put "$DAY.pdf" "$FOLDER"
+rmapi -ni put "$NAME.pdf" "$FOLDER"
 echo "$DAY" >> sent.log
-echo "Sent $DAY.pdf to /$FOLDER."
+echo "Sent $NAME.pdf to /$FOLDER."
