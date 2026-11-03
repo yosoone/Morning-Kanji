@@ -2,7 +2,9 @@ name: Morning page
 
 on:
   schedule:
-    - cron: "47 19 * * *"   # 04:47 in Miyazaki (UTC+9), the evening before in UTC
+    # GitHub can delay or drop scheduled runs, so try every hour from 00:47 to 06:47
+    # in Miyazaki (15:47-21:47 UTC). sent.log makes sure only one page goes out.
+    - cron: "47 15-21 * * *"
   workflow_dispatch:
     inputs:
       date:
@@ -20,11 +22,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check if today's page is due
+        id: due
+        run: |
+          DAY="${{ github.event.inputs.date }}"
+          DAY="${DAY:-$(TZ=Asia/Tokyo date +%F)}"
+          if [ -f "days/$DAY.json" ] && ! grep -qx "$DAY" sent.log 2>/dev/null; then
+            echo "send=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Nothing to send for $DAY."
+          fi
+
       - uses: actions/setup-python@v5
+        if: steps.due.outputs.send == 'true'
         with:
           python-version: "3.12"
 
       - name: Install tools
+        if: steps.due.outputs.send == 'true'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq wkhtmltopdf fonts-noto-cjk poppler-utils
@@ -34,6 +49,7 @@ jobs:
           rmapi version || true
 
       - name: Build and send
+        if: steps.due.outputs.send == 'true'
         env:
           RMAPI_CONFIG_CONTENT: ${{ secrets.RMAPI_CONFIG }}
         run: |
@@ -46,6 +62,7 @@ jobs:
           ./send_page.sh "${{ github.event.inputs.date }}"
 
       - name: Record sent page
+        if: steps.due.outputs.send == 'true'
         run: |
           if [ -z "$(git status --porcelain -- sent.log)" ]; then
             echo "Nothing new to record."

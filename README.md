@@ -6,7 +6,7 @@ The day files in `days/` hold the content, so opening them spoils the surprise.
 
 ## How it works
 
-1. **Schedule:** GitHub Actions runs `.github/workflows/morning.yml` daily at **04:47 in Miyazaki** (19:47 UTC the evening before).
+1. **Schedule:** GitHub Actions tries `.github/workflows/morning.yml` every hour from **00:47 to 06:47 in Miyazaki**, because GitHub can delay or drop scheduled runs.[^5] The first run that finds an unsent page sends it; the rest stop at once.
 2. **Pick:** `send_page.sh` looks for `days/<today>.json`, using the date in Japan. If there is no file, it does nothing.
 3. **Build:** `make_page.py` renders a one-page PDF at the reMarkable 2 screen size (1404 × 1872 px at 226 dpi).
 4. **Send:** [rmapi](https://github.com/ddvk/rmapi)[^1] uploads it to a folder called **Morning** on the tablet. The file is named by date only.
@@ -61,3 +61,4 @@ Pages shared beyond personal use carry these share-alike terms with them.
 [^2]: GitHub Docs, "Disabling and enabling a workflow," https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows.
 [^3]: Electronic Dictionary Research and Development Group, "KANJIDIC Project" and "JMdict-EDICT Dictionary Project," https://www.edrdg.org/.
 [^4]: Ulrich Apel, *KanjiVG*, https://kanjivg.tagaini.net.
+[^5]: GitHub Docs, "Events that trigger workflows: schedule," https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule.
