@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the page for a date and send it to the reMarkable "00MORNING" folder.
+# Build the page for a date and send it to the reMarkable "00 MORNING" folder.
 # Usage: ./send_page.sh [YYYY-MM-DD]   (default: today in Japan)
 # Set DRY_RUN=1 to build without sending.
 set -euo pipefail
@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 # Default: the coming morning in Japan. Runs start the evening before, and any
 # run before noon (a late one) still counts for that same day.
 DAY="${1:-$(TZ=Asia/Tokyo date -d '+12 hours' +%F)}"
-FOLDER="00MORNING"
+FOLDER="00 MORNING"
 
 if [[ ! -f "days/$DAY.json" ]]; then
   echo "No page for $DAY; nothing to send."
