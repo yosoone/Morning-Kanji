@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the page for a date and send it to the reMarkable "Morning" folder.
+# Build the page for a date and send it to the reMarkable "00MORNING" folder.
 # Usage: ./send_page.sh [YYYY-MM-DD]   (default: today in Japan)
 # Set DRY_RUN=1 to build without sending.
 set -euo pipefail
