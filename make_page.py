@@ -14,8 +14,8 @@ E = html.escape
 
 # reMarkable 2: 1404 x 1872 px at 226 dpi
 PAGE_W, PAGE_H = "157.8mm", "210.4mm"
-FOOTER_TOP = "201mm"  # where the sources line starts
-MARGIN = {"T": "9mm", "B": "13mm", "L": "18mm", "R": "12mm"}  # wider left for the toolbar
+FOOTER_TOP = "196.5mm"  # where the sources line starts
+MARGIN = {"T": "9mm", "B": "15mm", "L": "18mm", "R": "12mm"}  # wider left for the toolbar
 
 # Line weights in millimetres, so they look the same in every box size
 EDGE_MM = 0.12    # box outlines
@@ -48,6 +48,20 @@ def box(inner, mm):
 
 def paths(strokes, idx, colour, width):
     return "".join(f'<path d="{strokes[i]}" stroke="{colour}" stroke-width="{width}"/>' for i in idx)
+
+
+LINK = re.compile(r"\b((?:[a-z0-9-]+\.)+(?:org|net|one|com|jp))\b")
+
+
+CC = re.compile(r"CC BY-SA ([34])\.0")
+
+
+def linkify(text):
+    """Turn bare domain names and licence names into clickable links in the PDF.
+    CC BY-SA asks for the licence's web address with each copy; the link carries it."""
+    text = LINK.sub(r'<a href="https://\1" style="color:#222;text-decoration:none;">\1</a>', text)
+    return CC.sub(r'<a href="https://creativecommons.org/licenses/by-sa/\1.0/" '
+                  r'style="color:#222;text-decoration:none;">CC BY-SA \1.0</a>', text)
 
 
 def sup(n):
@@ -112,7 +126,7 @@ def build_html(day, rows):
             f' &nbsp;·&nbsp; “{E(c["translation"])}”{sup(c.get("fn"))}</div>'
         )
 
-    srcs = " &nbsp;".join(f"{i}. {E(t)}" for i, t in enumerate(day["sources"], 1))
+    srcs = " &nbsp;".join(f"{i}. {linkify(E(t))}" for i, t in enumerate(day["sources"], 1))
 
     css = f"""
     * {{ margin:0; padding:0; }}
@@ -164,7 +178,7 @@ def build_html(day, rows):
     footer = (
         "<!doctype html><html><head><meta charset='utf-8'><style>"
         "body{margin:0;font-family:'Noto Sans CJK JP',sans-serif;font-size:9.5pt;color:#222;line-height:1.4;}"
-        f"</style></head><body><b>Sources</b> &nbsp;{srcs} &nbsp;·&nbsp; {E(day['credit'])}</body></html>"
+        f"</style></head><body><b>Sources</b> &nbsp;{srcs} &nbsp;·&nbsp; {linkify(E(day['credit']))}</body></html>"
     )
     return page, footer
 
@@ -198,10 +212,11 @@ def add_footer(foot_html, out, title):
          str(foot_html), str(foot_pdf)],
         stderr=subprocess.DEVNULL,
     )
-    page = PdfReader(str(out)).pages[0]
-    page.merge_page(PdfReader(str(foot_pdf)).pages[0])
     w = PdfWriter()
-    w.add_page(page)
+    page = w.add_page(PdfReader(str(out)).pages[0])
+    foot = PdfReader(str(foot_pdf)).pages[0]
+    page.merge_page(foot)
+    # merge_page also carries over the footer's links
     w.add_metadata({"/Title": title})
     with open(out, "wb") as f:
         w.write(f)

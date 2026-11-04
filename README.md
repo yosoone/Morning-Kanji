@@ -52,13 +52,17 @@ Local builds need `wkhtmltopdf`, `fonts-noto-cjk`, `poppler-utils` and the Pytho
 
 ## Licences
 
-- **Stroke data:** KanjiVG, © Ulrich Apel, CC BY-SA 3.0.[^4] The files in `kanjivg/` are unchanged copies, and each page carries the credit.
-- **Dictionary data:** KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0.[^3]
+See [LICENSE.md](LICENSE.md). In short:
 
-Pages shared beyond personal use carry these share-alike terms with them.
+- **Pages:** © Yoso, [hub.yoso.one](https://hub.yoso.one), under CC BY-SA 4.0, because they are built from share-alike data.
+- **Stroke data:** KanjiVG, © Ulrich Apel, CC BY-SA 3.0.[^4] The files in `kanjivg/` are unchanged copies, with their own copyright headers.
+- **Dictionary data:** this package uses the JMdict and KANJIDIC dictionary files, © Electronic Dictionary Research and Development Group, under CC BY-SA 4.0, in accordance with the Group's licence.[^3]
+- **Code, design and prompts:** © Yoso, all rights reserved.
+
+Every page carries these credits in its footer, each with a link to its source and licence.
 
 [^1]: ddvk, *rmapi* (reMarkable cloud command-line client), GitHub, release v0.0.35, https://github.com/ddvk/rmapi/releases/tag/v0.0.35.
 [^2]: GitHub Docs, "Disabling and enabling a workflow," https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows.
-[^3]: Electronic Dictionary Research and Development Group, "KANJIDIC Project" and "JMdict-EDICT Dictionary Project," https://www.edrdg.org/.
+[^3]: Electronic Dictionary Research and Development Group, "General Dictionary Licence Statement," https://www.edrdg.org/edrdg/licence.html; "KANJIDIC Project," https://www.edrdg.org/wiki/KANJIDIC_Project.html; "The JMDict Project," https://www.edrdg.org/jmdict/j_jmdict.html.
 [^4]: Ulrich Apel, *KanjiVG*, https://kanjivg.tagaini.net.
 [^5]: GitHub Docs, "Events that trigger workflows: schedule," https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule.
