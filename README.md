@@ -10,7 +10,7 @@ The day files in `days/` hold the content, so opening them spoils the surprise.
 2. **Pick:** `send_page.sh` looks for `days/<date>.json` for the coming morning in Japan (any run before noon counts for that same day). If there is no file, it does nothing.
 3. **Build:** `make_page.py` renders a one-page PDF at the reMarkable 2 screen size (1404 × 1872 px at 226 dpi).
 4. **Send:** [rmapi](https://github.com/ddvk/rmapi)[^1] uploads it to a folder called **00 MORNING** on the tablet, named date-romaji, e.g. `2026-11-03-iki`. The tablet cannot display kanji in file names.
-5. **Record:** the date goes into `sent.log`, so a page is never sent twice. Keep this repository private: GitHub pauses scheduled workflows in public repositories after 60 days without activity.[^2]
+5. **Record:** the date goes into `sent.log`, so a page is never sent twice, and an exact copy of the PDF is kept in `archive/`. Keep this repository private: GitHub pauses scheduled workflows in public repositories after 60 days without activity.[^2]
 
 ## One-time setup
 

@@ -33,4 +33,7 @@ fi
 rmapi -ni mkdir "$FOLDER" >/dev/null 2>&1 || true
 rmapi -ni put "$NAME.pdf" "$FOLDER"
 echo "$DAY" >> sent.log
+# Keep an exact copy of every page that was sent.
+mkdir -p archive
+cp "$NAME.pdf" archive/
 echo "Sent $NAME.pdf to /$FOLDER."
