@@ -70,7 +70,7 @@ def build_html(day, rows):
             cells.append("+"); caps.append("")
     cells.append("="); caps.append("")
     cells.append(box(paths(s, range(n), "#000", 3.4), comp_mm))
-    caps.append(f'<span class="jp">{E(day["kun"]["kana"])}</span> {E(day["romaji"])}<br>{E(day["meaning"])}')
+    caps.append(f'<span class="jp">{E(day.get("kana", day["kun"]["kana"]))}</span> {E(day["romaji"])}<br>{E(day["meaning"])}')
     comp = '<table class="comp"><tr>' + "".join(
         f'<td class="op">{c}</td>' if c in "+=" else f"<td>{c}</td>" for c in cells
     ) + "</tr><tr>" + "".join(f'<td class="cap">{c}</td>' for c in caps) + "</tr></table>"

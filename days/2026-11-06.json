@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-06",
+  "kanji": "和",
+  "romaji": "wa",
+  "kana": "わ",
+  "meaning": "harmony",
+  "kun": {
+    "kana": "なごむ",
+    "romaji": "nagomu"
+  },
+  "on": {
+    "kana": "ワ",
+    "romaji": "wa"
+  },
+  "strokes": 8,
+  "grade": 3,
+  "parts": [
+    {
+      "char": "禾",
+      "kana": "のぎへん",
+      "romaji": "nogihen",
+      "meaning": "grain stalk",
+      "strokes": [
+        1,
+        5
+      ]
+    },
+    {
+      "char": "口",
+      "kana": "くち",
+      "romaji": "kuchi",
+      "meaning": "mouth",
+      "strokes": [
+        6,
+        8
+      ]
+    }
+  ],
+  "prompt": "Grain and a mouth. Write about one meal you shared, and end on a single word.",
+  "kanjivg": "0548c",
+  "info_fn": 1,
+  "sources": [
+    "KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0"
+  ],
+  "credit": "Stroke data: KanjiVG, Ulrich Apel, CC BY-SA 3.0"
+}

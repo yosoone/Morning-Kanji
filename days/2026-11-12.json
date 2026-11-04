@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-12",
+  "kanji": "秋",
+  "romaji": "aki",
+  "meaning": "autumn",
+  "kun": {
+    "kana": "あき",
+    "romaji": "aki"
+  },
+  "on": {
+    "kana": "シュウ",
+    "romaji": "shū"
+  },
+  "strokes": 9,
+  "grade": 2,
+  "parts": [
+    {
+      "char": "禾",
+      "kana": "のぎへん",
+      "romaji": "nogihen",
+      "meaning": "grain stalk",
+      "strokes": [
+        1,
+        5
+      ]
+    },
+    {
+      "char": "火",
+      "kana": "ひ",
+      "romaji": "hi",
+      "meaning": "fire",
+      "strokes": [
+        6,
+        9
+      ]
+    }
+  ],
+  "prompt": "One leaf, one colour, one line. Then stop.",
+  "kanjivg": "079cb",
+  "info_fn": 1,
+  "sources": [
+    "KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0"
+  ],
+  "credit": "Stroke data: KanjiVG, Ulrich Apel, CC BY-SA 3.0"
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-08",
+  "kanji": "泉",
+  "romaji": "izumi",
+  "meaning": "spring",
+  "kun": {
+    "kana": "いずみ",
+    "romaji": "izumi"
+  },
+  "on": {
+    "kana": "セン",
+    "romaji": "sen"
+  },
+  "strokes": 9,
+  "grade": 6,
+  "parts": [
+    {
+      "char": "白",
+      "kana": "しろ",
+      "romaji": "shiro",
+      "meaning": "white",
+      "strokes": [
+        1,
+        5
+      ]
+    },
+    {
+      "char": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water",
+      "strokes": [
+        6,
+        9
+      ]
+    }
+  ],
+  "prompt": "Follow one of your words back to where it began.",
+  "kanjivg": "06cc9",
+  "info_fn": 1,
+  "sources": [
+    "KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0"
+  ],
+  "credit": "Stroke data: KanjiVG, Ulrich Apel, CC BY-SA 3.0"
+}

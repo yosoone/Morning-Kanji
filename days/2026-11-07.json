@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-07",
+  "kanji": "休",
+  "romaji": "yasumu",
+  "meaning": "rest",
+  "kun": {
+    "kana": "やすむ",
+    "romaji": "yasumu"
+  },
+  "on": {
+    "kana": "キュウ",
+    "romaji": "kyū"
+  },
+  "strokes": 6,
+  "grade": 1,
+  "parts": [
+    {
+      "char": "亻",
+      "kana": "にんべん",
+      "romaji": "ninben",
+      "meaning": "person",
+      "strokes": [
+        1,
+        2
+      ]
+    },
+    {
+      "char": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree",
+      "strokes": [
+        3,
+        6
+      ]
+    }
+  ],
+  "prompt": "A person leaning on a tree. Write what the tree notices.",
+  "kanjivg": "04f11",
+  "info_fn": 1,
+  "sources": [
+    "KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0"
+  ],
+  "credit": "Stroke data: KanjiVG, Ulrich Apel, CC BY-SA 3.0"
+}

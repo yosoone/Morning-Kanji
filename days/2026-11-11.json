@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-11",
+  "kanji": "音",
+  "romaji": "oto",
+  "meaning": "sound",
+  "kun": {
+    "kana": "おと",
+    "romaji": "oto"
+  },
+  "on": {
+    "kana": "オン",
+    "romaji": "on"
+  },
+  "strokes": 9,
+  "grade": 1,
+  "parts": [
+    {
+      "char": "立",
+      "kana": "たつ",
+      "romaji": "tatsu",
+      "meaning": "stand up",
+      "strokes": [
+        1,
+        5
+      ]
+    },
+    {
+      "char": "日",
+      "kana": "ひ",
+      "romaji": "hi",
+      "meaning": "sun",
+      "strokes": [
+        6,
+        9
+      ]
+    }
+  ],
+  "prompt": "Write the quietest sound you heard this week.",
+  "kanjivg": "097f3",
+  "info_fn": 1,
+  "sources": [
+    "KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0"
+  ],
+  "credit": "Stroke data: KanjiVG, Ulrich Apel, CC BY-SA 3.0"
+}

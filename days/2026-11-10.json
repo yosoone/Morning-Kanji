@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-10",
+  "kanji": "思",
+  "romaji": "omou",
+  "meaning": "think",
+  "kun": {
+    "kana": "おもう",
+    "romaji": "omou"
+  },
+  "on": {
+    "kana": "シ",
+    "romaji": "shi"
+  },
+  "strokes": 9,
+  "grade": 2,
+  "parts": [
+    {
+      "char": "田",
+      "kana": "た",
+      "romaji": "ta",
+      "meaning": "rice field",
+      "strokes": [
+        1,
+        5
+      ]
+    },
+    {
+      "char": "心",
+      "kana": "こころ",
+      "romaji": "kokoro",
+      "meaning": "heart",
+      "strokes": [
+        6,
+        9
+      ]
+    }
+  ],
+  "prompt": "A field above the heart. Write a thought you could walk across.",
+  "kanjivg": "0601d",
+  "info_fn": 1,
+  "sources": [
+    "KANJIDIC2 and JMdict, Electronic Dictionary Research and Development Group, CC BY-SA 4.0"
+  ],
+  "credit": "Stroke data: KanjiVG, Ulrich Apel, CC BY-SA 3.0"
+}
