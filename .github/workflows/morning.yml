@@ -2,7 +2,7 @@ name: Morning page
 
 on:
   schedule:
-    - cron: "47 15 * * *"   # 00:47 in Miyazaki (UTC+9), 15:47 UTC the day before
+    - cron: "47 12 * * *"   # 21:47 in Miyazaki (UTC+9): the page for the next morning
   workflow_dispatch:
     inputs:
       date:
@@ -24,7 +24,7 @@ jobs:
         id: due
         run: |
           DAY="${{ github.event.inputs.date }}"
-          DAY="${DAY:-$(TZ=Asia/Tokyo date +%F)}"
+          DAY="${DAY:-$(TZ=Asia/Tokyo date -d '+12 hours' +%F)}"
           if [ -f "days/$DAY.json" ] && ! grep -qx "$DAY" sent.log 2>/dev/null; then
             echo "send=true" >> "$GITHUB_OUTPUT"
           else
