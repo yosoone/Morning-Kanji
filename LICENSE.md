@@ -4,7 +4,9 @@ This repository holds three kinds of material, each under its own terms.
 
 ## 1. The generated pages: CC BY-SA 4.0
 
-Every PDF page this project produces is © Yoso ([hub.yoso.one](https://hub.yoso.one)) and is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International** licence: <https://creativecommons.org/licenses/by-sa/4.0/>.
+Every PDF page this project produces, including its writing prompt and design, is © Yoso ([hub.yoso.one](https://hub.yoso.one)) and is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International** licence: <https://creativecommons.org/licenses/by-sa/4.0/>.
+
+Concept, design and prompts: Yoso. Anyone sharing or adapting a page must keep this credit.
 
 The pages must carry this licence because they are built from the share-alike data in section 2. KanjiVG is under CC BY-SA 3.0, which allows adaptations to be licensed under a later version with the same licence elements, so a single CC BY-SA 4.0 licence covers both sources.
 
@@ -29,9 +31,9 @@ Each page carries its credits and licence in the footer.
 
 This publication has included material from the JMdict and KANJIDIC dictionary files in accordance with the licence provisions of the Electronic Dictionary Research and Development Group.
 
-## 3. Everything else: all rights reserved
+## 3. The code: all rights reserved
 
-The code (`make_page.py`, `send_page.sh`, the workflow), the page design and the writing prompts are © Yoso. All rights reserved.
+The code (`make_page.py`, `send_page.sh`, the workflow) is © Yoso. All rights reserved.
 
 ## Tools used, not included
 

@@ -54,10 +54,10 @@ Local builds need `wkhtmltopdf`, `fonts-noto-cjk`, `poppler-utils` and the Pytho
 
 See [LICENSE.md](LICENSE.md). In short:
 
-- **Pages:** © Yoso, [hub.yoso.one](https://hub.yoso.one), under CC BY-SA 4.0, because they are built from share-alike data.
+- **Pages, including prompts and design:** © Yoso, [hub.yoso.one](https://hub.yoso.one), under CC BY-SA 4.0, credited as "Concept, design and prompts: Yoso".
 - **Stroke data:** KanjiVG, © Ulrich Apel, CC BY-SA 3.0.[^4] The files in `kanjivg/` are unchanged copies, with their own copyright headers.
 - **Dictionary data:** this package uses the JMdict and KANJIDIC dictionary files, © Electronic Dictionary Research and Development Group, under CC BY-SA 4.0, in accordance with the Group's licence.[^3]
-- **Code, design and prompts:** © Yoso, all rights reserved.
+- **Code:** © Yoso, all rights reserved.
 
 Every page carries these credits in its footer, each with a link to its source and licence.
 
