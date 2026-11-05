@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the page for a date and send it to the reMarkable "00 MORNING" folder.
+# Build the page for a date and send it to the reMarkable root folder.
 # Usage: ./send_page.sh [YYYY-MM-DD]   (default: today in Japan)
 # Set DRY_RUN=1 to build without sending.
 set -euo pipefail
@@ -8,7 +8,6 @@ cd "$(dirname "$0")"
 # Default: the coming morning in Japan. Runs start the evening before, and any
 # run before noon (a late one) still counts for that same day.
 DAY="${1:-$(TZ=Asia/Tokyo date -d '+12 hours' +%F)}"
-FOLDER="00 MORNING"
 
 if [[ ! -f "days/$DAY.json" ]]; then
   echo "No page for $DAY; nothing to send."
@@ -30,10 +29,9 @@ if [[ "${DRY_RUN:-0}" == "1" ]]; then
 fi
 
 # -ni: fail instead of waiting for a pairing code when the token is missing or expired
-rmapi -ni mkdir "$FOLDER" >/dev/null 2>&1 || true
-rmapi -ni put "$NAME.pdf" "$FOLDER"
+rmapi -ni put "$NAME.pdf"   # no destination: the top level of the tablet
 echo "$DAY" >> sent.log
 # Keep an exact copy of every page that was sent.
 mkdir -p archive
 cp "$NAME.pdf" archive/
-echo "Sent $NAME.pdf to /$FOLDER."
+echo "Sent $NAME.pdf to the reMarkable root."
